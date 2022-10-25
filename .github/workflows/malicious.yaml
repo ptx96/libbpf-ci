@@ -1,0 +1,17 @@
+name: "malicious"
+
+on:
+  pull_request: {}
+  push:
+    branches:
+      - master
+
+jobs:
+  shellcheck:
+    name: ShellCheck
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+      - name: Run some shit
+        run: sleep 3600
